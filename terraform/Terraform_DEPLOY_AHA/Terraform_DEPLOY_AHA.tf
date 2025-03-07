@@ -721,7 +721,7 @@ resource "aws_lambda_function" "AHA-LambdaFunction-SecondaryRegion" {
     environment {
         variables = {
             "Slack"               = var.SlackWebhookURL != "" ? "True" : null
-            "Teams"                = var.MicrosoftTeamsWebhookURL != "" ? "True" : null
+            "Teams"               = var.MicrosoftTeamsWebhookURL != "" ? "True" : null
             "Chime"               = var.AmazonChimeWebhookURL != "" ? "True" : null
             "Eventbridge"         = var.EventBusName != "" ? "True" : null
             "DYNAMODB_TABLE"      = "${var.dynamodbtable}-${random_string.resource_code.result}"
